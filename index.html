@@ -53,10 +53,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap">
 
   <!-- Szybsze wczytanie pierwszego slajdu -->
-  <link rel="preload" as="image" href="obrazy/slajd-gabinet-mobile.jpg" media="(max-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" href="obrazy/slajd-gabinet.jpg" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="obrazy/slajd-gabinet-mobile.avif" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="obrazy/slajd-gabinet.avif" media="(min-width: 769px)" fetchpriority="high">
 
-  <link rel="stylesheet" href="css/styles.css?v=9">
+  <link rel="stylesheet" href="css/styles.css?v=11">
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- Dane strukturalne dla Google -->
@@ -232,12 +232,16 @@
 
         <div class="slide slide--active">
           <picture>
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-gabinet-mobile.avif">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-gabinet-mobile.webp">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-gabinet-mobile.jpg">
+            <source type="image/avif" srcset="obrazy/slajd-gabinet.avif">
+            <source type="image/webp" srcset="obrazy/slajd-gabinet.webp">
             <img src="obrazy/slajd-gabinet.jpg" alt="Spokojny gabinet z zieloną sofą" fetchpriority="high">
           </picture>
           <div class="slide__overlay"></div>
           <div class="slide__caption container">
-            <h2>Czasem wystarczy rozmowa, żeby zobaczyć więcej</h2>
+            <p class="slide__title">Czasem wystarczy rozmowa, żeby zobaczyć więcej</p>
             <p>Konsultacje indywidualne dla dorosłych — wsparcie w kryzysie, stresie i trudnych momentach życia.</p>
             <div class="slide__cta">
               <a class="btn btn--accent" href="https://psychoterapeuta-pila.pl/rezerwacja.html?utm_source=pilapsycholog_pl&utm_medium=referral&utm_campaign=druga_strona">Umów wizytę</a>
@@ -248,12 +252,16 @@
 
         <div class="slide">
           <picture>
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-para-mobile.avif">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-para-mobile.webp">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-para-mobile.jpg">
+            <source type="image/avif" srcset="obrazy/slajd-para.avif">
+            <source type="image/webp" srcset="obrazy/slajd-para.webp">
             <img src="obrazy/slajd-para.jpg" alt="Dłonie pary ułożone w kształt serca" loading="lazy">
           </picture>
           <div class="slide__overlay"></div>
           <div class="slide__caption container">
-            <h2>Bliskość zaczyna się od zrozumienia</h2>
+            <p class="slide__title">Bliskość zaczyna się od zrozumienia</p>
             <p>Pomoc dla par w kryzysie — odbudowa komunikacji i wzajemnego zaufania.</p>
             <div class="slide__cta">
               <a class="btn btn--accent" href="https://psychoterapeuta-pila.pl/rezerwacja.html?utm_source=pilapsycholog_pl&utm_medium=referral&utm_campaign=druga_strona">Umów wizytę</a>
@@ -264,12 +272,16 @@
 
         <div class="slide">
           <picture>
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-rodzina-mobile.avif">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-rodzina-mobile.webp">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-rodzina-mobile.jpg">
+            <source type="image/avif" srcset="obrazy/slajd-rodzina.avif">
+            <source type="image/webp" srcset="obrazy/slajd-rodzina.webp">
             <img src="obrazy/slajd-rodzina.jpg" alt="Mama z dziećmi spędzająca razem czas" loading="lazy">
           </picture>
           <div class="slide__overlay"></div>
           <div class="slide__caption container">
-            <h2>Dom to relacje, nie tylko ściany</h2>
+            <p class="slide__title">Dom to relacje, nie tylko ściany</p>
             <p>Wsparcie dla rodzin w konfliktach i trudnościach, które dotykają wszystkich domowników.</p>
             <div class="slide__cta">
               <a class="btn btn--accent" href="https://psychoterapeuta-pila.pl/rezerwacja.html?utm_source=pilapsycholog_pl&utm_medium=referral&utm_campaign=druga_strona">Umów wizytę</a>
@@ -280,12 +292,16 @@
 
         <div class="slide">
           <picture>
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-dziecko-mobile.avif">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-dziecko-mobile.webp">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-dziecko-mobile.jpg">
+            <source type="image/avif" srcset="obrazy/slajd-dziecko.avif">
+            <source type="image/webp" srcset="obrazy/slajd-dziecko.webp">
             <img src="obrazy/slajd-dziecko.jpg" alt="Roześmiane dziecko podczas zabawy" loading="lazy">
           </picture>
           <div class="slide__overlay"></div>
           <div class="slide__caption container">
-            <h2>Małe zmartwienia bywają największe</h2>
+            <p class="slide__title">Małe zmartwienia bywają największe</p>
             <p>Pomoc psychologiczna dla dzieci i młodzieży, dostosowana do wieku i sytuacji.</p>
             <div class="slide__cta">
               <a class="btn btn--accent" href="https://psychoterapeuta-pila.pl/rezerwacja.html?utm_source=pilapsycholog_pl&utm_medium=referral&utm_campaign=druga_strona">Umów wizytę</a>
