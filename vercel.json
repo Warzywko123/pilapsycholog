@@ -2,6 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.pilapsycholog.pl" }],
+      "destination": "https://pilapsycholog.pl/$1",
+      "permanent": true
+    },
     { "source": "/psycholog-pila.html", "destination": "/", "permanent": true },
     { "source": "/psychoterapeuta-pila.html", "destination": "/", "permanent": true },
     { "source": "/oferta.html", "destination": "/#oferta", "permanent": true },
