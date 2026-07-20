@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://pilapsycholog.pl/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pilapsycholog.pl/obrazy/og-image.jpg</image:loc>
+      <image:title>Psycholog Piła — mgr Joanna Grochowska</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pilapsycholog.pl/obrazy/joanna-grochowska.jpg</image:loc>
+      <image:title>mgr Joanna Grochowska — psycholog w Pile</image:title>
+    </image:image>
+  </url>
+</urlset>
