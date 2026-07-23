@@ -18,7 +18,8 @@
     { "source": "/oferta/psycholog-dzieciecy-pila.html", "destination": "/#oferta", "permanent": true },
     { "source": "/oferta/psycholog-online.html", "destination": "/#oferta", "permanent": true },
     { "source": "/oferta/psycholog-od-uzaleznien-pila.html", "destination": "/#oferta", "permanent": true },
-    { "source": "/oferta/(.*)", "destination": "/#oferta", "permanent": true }
+    { "source": "/oferta/(.*)", "destination": "/#oferta", "permanent": true },
+    { "source": "/(.*\\.html)", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
