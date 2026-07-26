@@ -181,3 +181,69 @@
 
   start();
 })();
+
+// =====================================================
+// Śledzenie kliknięć w telefon (GA4) — event "phone_click"
+// =====================================================
+(function () {
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'phone_click', {
+          phone_number: this.getAttribute('href').replace('tel:', ''),
+          link_text: this.textContent.trim(),
+          page_location: window.location.pathname
+        });
+      }
+    });
+  });
+})();
+
+// =====================================================
+// Baner cookies + Google Consent Mode v2 (RODO)
+// GA4 rusza dopiero po kliknięciu "Akceptuję".
+// =====================================================
+(function () {
+  'use strict';
+
+  var COOKIE_KEY = 'cookies-consent-v2';
+  var banner = document.querySelector('.cookie-banner');
+  var acceptBtn = document.querySelector('[data-cookie-action="accept"]');
+  var rejectBtn = document.querySelector('[data-cookie-action="reject"]');
+
+  // 'granted' = GA4 zbiera anonimowe statystyki, 'denied' = nie zbiera nic.
+  function updateGoogleConsent(granted) {
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': granted ? 'granted' : 'denied',
+        // ad_* zawsze denied — strona nie używa reklam Google
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    }
+  }
+
+  if (!banner) return;
+
+  var consent = localStorage.getItem(COOKIE_KEY);
+
+  if (consent === 'accepted') {
+    // Wcześniej zaakceptowano — włącz GA4 od razu, bez pokazywania banera
+    updateGoogleConsent(true);
+  } else if (consent !== 'rejected') {
+    // Brak decyzji — pokaż baner po chwili
+    setTimeout(function () {
+      banner.classList.add('is-visible');
+    }, 800);
+  }
+
+  function decide(value) {
+    localStorage.setItem(COOKIE_KEY, value);
+    updateGoogleConsent(value === 'accepted');
+    banner.classList.remove('is-visible');
+  }
+
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { decide('accepted'); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { decide('rejected'); });
+})();
