@@ -19,7 +19,13 @@
     { "source": "/oferta/psycholog-online.html", "destination": "/#oferta", "permanent": true },
     { "source": "/oferta/psycholog-od-uzaleznien-pila.html", "destination": "/#oferta", "permanent": true },
     { "source": "/oferta/(.*)", "destination": "/#oferta", "permanent": true },
-    { "source": "/(.*\\.html)", "destination": "/", "permanent": true }
+    { "source": "/psycholog-walcz.html", "destination": "/", "permanent": true },
+    { "source": "/psycholog-czarnkow.html", "destination": "/", "permanent": true },
+    { "source": "/psycholog-chodziez.html", "destination": "/", "permanent": true },
+    { "source": "/psycholog-zlotow.html", "destination": "/", "permanent": true },
+    { "source": "/psycholog-trzcianka.html", "destination": "/", "permanent": true },
+    { "source": "/kryzys-psycholog-pila.html", "destination": "/", "permanent": true },
+    { "source": "/52-psycholog-dzieciecy-pila.html", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
