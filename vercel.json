@@ -4,53 +4,157 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.pilapsycholog.pl" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.pilapsycholog.pl"
+        }
+      ],
       "destination": "https://pilapsycholog.pl/$1",
       "permanent": true
     },
-    { "source": "/psycholog-pila.html", "destination": "/", "permanent": true },
-    { "source": "/psychoterapeuta-pila.html", "destination": "/", "permanent": true },
-    { "source": "/oferta.html", "destination": "/#oferta", "permanent": true },
-    { "source": "/cennik-psycholog-pila.html", "destination": "/#faq", "permanent": true },
-    { "source": "/utrata-prawa-jazdy-pila.html", "destination": "/#oferta", "permanent": true },
-    { "source": "/kontak-psycholog-pila.html", "destination": "/#kontakt", "permanent": true },
-    { "source": "/kontakt-psycholog-pila.html", "destination": "/#kontakt", "permanent": true },
-    { "source": "/oferta/psycholog-dzieciecy-pila.html", "destination": "/#oferta", "permanent": true },
-    { "source": "/oferta/psycholog-online.html", "destination": "/#oferta", "permanent": true },
-    { "source": "/oferta/psycholog-od-uzaleznien-pila.html", "destination": "/#oferta", "permanent": true },
-    { "source": "/oferta/(.*)", "destination": "/#oferta", "permanent": true },
-    { "source": "/psycholog-walcz.html", "destination": "/", "permanent": true },
-    { "source": "/psycholog-czarnkow.html", "destination": "/", "permanent": true },
-    { "source": "/psycholog-chodziez.html", "destination": "/", "permanent": true },
-    { "source": "/psycholog-zlotow.html", "destination": "/", "permanent": true },
-    { "source": "/psycholog-trzcianka.html", "destination": "/", "permanent": true },
-    { "source": "/kryzys-psycholog-pila.html", "destination": "/", "permanent": true },
-    { "source": "/52-psycholog-dzieciecy-pila.html", "destination": "/", "permanent": true }
+    {
+      "source": "/psycholog-pila.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/psychoterapeuta-pila.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/oferta.html",
+      "destination": "/#oferta",
+      "permanent": true
+    },
+    {
+      "source": "/cennik-psycholog-pila.html",
+      "destination": "/#faq",
+      "permanent": true
+    },
+    {
+      "source": "/utrata-prawa-jazdy-pila.html",
+      "destination": "/#oferta",
+      "permanent": true
+    },
+    {
+      "source": "/kontak-psycholog-pila.html",
+      "destination": "/#kontakt",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt-psycholog-pila.html",
+      "destination": "/#kontakt",
+      "permanent": true
+    },
+    {
+      "source": "/oferta/psycholog-dzieciecy-pila.html",
+      "destination": "/#oferta",
+      "permanent": true
+    },
+    {
+      "source": "/oferta/psycholog-online.html",
+      "destination": "/#oferta",
+      "permanent": true
+    },
+    {
+      "source": "/oferta/psycholog-od-uzaleznien-pila.html",
+      "destination": "/#oferta",
+      "permanent": true
+    },
+    {
+      "source": "/oferta/(.*)",
+      "destination": "/#oferta",
+      "permanent": true
+    },
+    {
+      "source": "/psycholog-walcz.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/psycholog-czarnkow.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/psycholog-chodziez.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/psycholog-zlotow.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/psycholog-trzcianka.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kryzys-psycholog-pila.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/52-psycholog-dzieciecy-pila.html",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://*.analytics.google.com; frame-src https://*.google.com https://maps.google.com"
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://*.analytics.google.com; frame-src https://*.google.com https://maps.google.com"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
     {
       "source": "/(css|js|obrazy)/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*\\.(?:html|xml|txt|webmanifest))",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     }
   ]
