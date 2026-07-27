@@ -56,7 +56,7 @@
   <link rel="preload" as="image" type="image/avif" href="obrazy/slajd-gabinet-mobile.avif" media="(max-width: 768px)" fetchpriority="high">
   <link rel="preload" as="image" type="image/avif" href="obrazy/slajd-gabinet.avif" media="(min-width: 769px)" fetchpriority="high">
 
-  <link rel="stylesheet" href="css/styles.css?v=12">
+  <link rel="stylesheet" href="css/styles.css?v=13">
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- Google Analytics 4 (Consent Mode v2 — domyślnie wyłączone, włącza się po akceptacji cookies) -->
@@ -619,12 +619,18 @@
               <a class="btn btn--outline" href="tel:+48729912230">📞 Zadzwoń</a>
             </div>
           </div>
-          <div class="map-container reveal">
+          <div class="map-container reveal" data-map-consent>
             <iframe
-              src="https://maps.google.com/maps?q=Psycholog+Pi%C5%82a+Gabinet+Pomocy+Psychologicznej+Psychoterapeuta&ll=53.1528973,16.7112972&t=&z=16&ie=UTF8&iwloc=A&output=embed"
+              data-src="https://maps.google.com/maps?q=Psycholog+Pi%C5%82a+Gabinet+Pomocy+Psychologicznej+Psychoterapeuta&ll=53.1528973,16.7112972&t=&z=16&ie=UTF8&iwloc=A&output=embed"
               title="Gabinet Pomocy Psychologicznej na Google Maps — Al. Wojska Polskiego 49B, Piła"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-consent">
+              <span class="map-consent__pin" aria-hidden="true">📍</span>
+              <p class="map-consent__address">Al. Wojska Polskiego 49B<br>64-920 Piła</p>
+              <p class="map-consent__note">Mapa pochodzi z serwerów Google. Jej wczytanie przekaże Google Twój adres IP — dlatego pytamy najpierw. Szczegóły w <a href="polityka-prywatnosci.html">polityce prywatności</a>.</p>
+              <button type="button" class="map-consent__btn" data-map-action="load">Pokaż mapę</button>
+            </div>
           </div>
         </div>
       </div>
@@ -645,13 +651,13 @@
 
   <!-- ============== BANER COOKIES (Consent Mode v2) ============== -->
   <div class="cookie-banner" role="dialog" aria-label="Informacja o plikach cookies">
-    <p>Strona używa niezbędnych cookies technicznych oraz — za Twoją zgodą — <strong>Google Analytics</strong> do anonimowych statystyk odwiedzin. Osadzona jest też mapa Google. Szczegóły w <a href="polityka-prywatnosci.html">polityce prywatności</a>.</p>
+    <p>Strona używa niezbędnych cookies technicznych oraz — za Twoją zgodą — <strong>Google Analytics</strong> do anonimowych statystyk odwiedzin. Zgoda obejmuje też <strong>mapę Google</strong> w sekcji kontakt. Szczegóły w <a href="polityka-prywatnosci.html">polityce prywatności</a>.</p>
     <div class="cookie-banner__actions">
       <button class="cookie-banner__btn cookie-banner__btn--accept" type="button" data-cookie-action="accept">Akceptuję</button>
       <button class="cookie-banner__btn cookie-banner__btn--reject" type="button" data-cookie-action="reject">Tylko niezbędne</button>
     </div>
   </div>
 
-  <script src="js/script.js?v=7"></script>
+  <script src="js/script.js?v=8"></script>
 </body>
 </html>
