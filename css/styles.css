@@ -48,6 +48,10 @@
   --color-primary-light: #5a8b7a;
   --color-accent: #c17a52;
   --color-accent-dark: #9c5f3d;
+  /* Wariant akcentu pod kontrast WCAG AA — samo --color-accent z białym
+     napisem daje 3.4:1, a przy tej wielkości pisma potrzeba min. 4.5:1. */
+  --color-accent-btn: #a5613b;  /* 4.80:1 z bielą */
+  --color-accent-on-dark: #d7a88e;  /* 4.60:1 na ciemnozielonym tle sekcji */
   --color-bg: #ffffff;
   --color-bg-alt: #f6f4f0;
   --color-text: #2d3428;
@@ -261,7 +265,7 @@ h3 { font-size: clamp(1.1rem, 3vw, 1.35rem); }
   color: rgba(255,255,255,0.92);
   text-shadow: 0 1px 8px rgba(0,0,0,0.35);
 }
-.btn--accent { background: var(--color-accent); color: #fff; }
+.btn--accent { background: var(--color-accent-btn); color: #fff; }
 .btn--accent:hover { background: var(--color-accent-dark); color: #fff; }
 .btn--ghost-light {
   background: rgba(255,255,255,0.12);
@@ -350,7 +354,8 @@ h3 { font-size: clamp(1.1rem, 3vw, 1.35rem); }
   font-family: var(--font-serif);
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 600;
-  color: var(--color-accent);
+  /* liczby stoją na ciemnozielonym tle — tam zwykły akcent dawał 2.87:1 */
+  color: var(--color-accent-on-dark);
   line-height: 1.1;
 }
 .stat__label { font-size: 0.9rem; color: rgba(255,255,255,0.82); }

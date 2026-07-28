@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1">
 
 
-  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/styles.css?v=16">
   <script>document.documentElement.classList.add('js');</script>
 
   <style>
@@ -31,20 +31,46 @@
     .legal__back { display: inline-block; margin-top: var(--space-md); }
   </style>
 
-  <!-- Google Analytics 4 (Consent Mode v2 — domyślnie wyłączone, włącza się po akceptacji cookies) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDWGPE3CQD"></script>
+  <!-- Google Analytics 4 — RODO: skrypt Google wczytuje się DOPIERO po zgodzie.
+       Bez zgody przeglądarka nie nawiązuje żadnego połączenia z serwerami Google. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+
+    // Consent Mode v2 — domyślnie wszystko odmowa.
     gtag('consent', 'default', {
       'ad_storage': 'denied',
       'ad_user_data': 'denied',
       'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
+      'analytics_storage': 'denied'
     });
+
     gtag('js', new Date());
     gtag('config', 'G-FDWGPE3CQD', { 'anonymize_ip': true });
+
+    // Dociąga gtag.js. Polecenia powyżej czekają w dataLayer i wykonają się
+    // dopiero po wczytaniu — dlatego można je kolejkować przed pobraniem skryptu.
+    window.wczytajGoogleAnalytics = function () {
+      if (window.__gaWczytany) return;
+      window.__gaWczytany = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDWGPE3CQD';
+      document.head.appendChild(s);
+    };
+
+    // Zgoda z poprzedniej wizyty — wczytaj od razu, bez czekania na baner.
+    try {
+      if (localStorage.getItem('cookies-consent-v2') === 'accepted') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        });
+        window.wczytajGoogleAnalytics();
+      }
+    } catch (e) { /* localStorage zablokowany — zostaje odmowa */ }
   </script>
 </head>
 <body>
@@ -120,6 +146,6 @@
     </div>
   </div>
 
-  <script src="js/script.js?v=8"></script>
+  <script src="js/script.js?v=9"></script>
 </body>
 </html>
