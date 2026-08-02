@@ -50,10 +50,12 @@
 
 
   <!-- Szybsze wczytanie pierwszego slajdu -->
-  <link rel="preload" as="image" type="image/avif" href="obrazy/slajd-gabinet-mobile.avif" media="(max-width: 768px)" fetchpriority="high">
+  <!-- imagesrcset musi byc identyczny jak w <picture>, inaczej telefon pobralby
+       najpierw wersje 900px z preloadu, a potem 1920px wybrana przez srcset. -->
+  <link rel="preload" as="image" type="image/avif" imagesrcset="obrazy/slajd-gabinet-mobile.avif 900w, obrazy/slajd-gabinet.avif 1920w" imagesizes="130vw" media="(max-width: 768px)" fetchpriority="high">
   <link rel="preload" as="image" type="image/avif" href="obrazy/slajd-gabinet.avif" media="(min-width: 769px)" fetchpriority="high">
 
-  <link rel="stylesheet" href="css/styles.css?v=19">
+  <link rel="stylesheet" href="css/styles.css?v=20">
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- Google Analytics 4 — RODO: skrypt Google wczytuje się DOPIERO po zgodzie.
@@ -270,9 +272,15 @@
       <div class="slider__track">
 
         <div class="slide slide--active">
+          <!-- Kadr jest powiekszany w CSS o 1.3 (transform: scale), wiec przy
+               ekranie 390px zdjecie zajmuje 507px CSS = 1521px na ekranie 3x.
+               Sam plik 900px byl przez to rozciagany prawie dwukrotnie. Deskryptory
+               "w" + sizes="130vw" pozwalaja przegladarce wziac wersje 1920px tam,
+               gdzie gestosc ekranu tego wymaga; ekrany 1x nadal dostaja 900px.
+               JPG (fallback dla najstarszych przegladarek) zostaje przy 900px. -->
           <picture>
-            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-gabinet-mobile.avif">
-            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-gabinet-mobile.webp">
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-gabinet-mobile.avif 900w, obrazy/slajd-gabinet.avif 1920w" sizes="130vw">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-gabinet-mobile.webp 900w, obrazy/slajd-gabinet.webp 1920w" sizes="130vw">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-gabinet-mobile.jpg">
             <source type="image/avif" srcset="obrazy/slajd-gabinet.avif">
             <source type="image/webp" srcset="obrazy/slajd-gabinet.webp">
@@ -291,8 +299,8 @@
 
         <div class="slide">
           <picture>
-            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-para-mobile.avif">
-            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-para-mobile.webp">
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-para-mobile.avif 900w, obrazy/slajd-para.avif 1920w" sizes="130vw">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-para-mobile.webp 900w, obrazy/slajd-para.webp 1920w" sizes="130vw">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-para-mobile.jpg">
             <source type="image/avif" srcset="obrazy/slajd-para.avif">
             <source type="image/webp" srcset="obrazy/slajd-para.webp">
@@ -311,8 +319,8 @@
 
         <div class="slide">
           <picture>
-            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-rodzina-mobile.avif">
-            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-rodzina-mobile.webp">
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-rodzina-mobile.avif 900w, obrazy/slajd-rodzina.avif 1920w" sizes="130vw">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-rodzina-mobile.webp 900w, obrazy/slajd-rodzina.webp 1920w" sizes="130vw">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-rodzina-mobile.jpg">
             <source type="image/avif" srcset="obrazy/slajd-rodzina.avif">
             <source type="image/webp" srcset="obrazy/slajd-rodzina.webp">
@@ -331,8 +339,8 @@
 
         <div class="slide">
           <picture>
-            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-dziecko-mobile.avif">
-            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-dziecko-mobile.webp">
+            <source media="(max-width: 768px)" type="image/avif" srcset="obrazy/slajd-dziecko-mobile.avif 900w, obrazy/slajd-dziecko.avif 1920w" sizes="130vw">
+            <source media="(max-width: 768px)" type="image/webp" srcset="obrazy/slajd-dziecko-mobile.webp 900w, obrazy/slajd-dziecko.webp 1920w" sizes="130vw">
             <source media="(max-width: 768px)" srcset="obrazy/slajd-dziecko-mobile.jpg">
             <source type="image/avif" srcset="obrazy/slajd-dziecko.avif">
             <source type="image/webp" srcset="obrazy/slajd-dziecko.webp">

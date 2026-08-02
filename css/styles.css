@@ -799,7 +799,11 @@ h3 { font-size: clamp(1.1rem, 3vw, 1.35rem); }
   font-size: 0.9rem;
 }
 
-@media (max-width: 700px) {
+/* Hamburger wlaczal sie dopiero przy 700px, a poziome menu nie miesci sie
+   juz od ok. 870px w dol — miedzy 701 a 860 px pozycja „O mnie" lamala sie
+   na dwie linie i pasek wygladal na zepsuty (m.in. iPad pionowo 768 i 820 px).
+   Prog podniesiony do 880px; reguly odstepow zostaja przy 700px. */
+@media (max-width: 880px) {
   .nav__menu {
     display: none;
     position: absolute;
@@ -817,6 +821,9 @@ h3 { font-size: clamp(1.1rem, 3vw, 1.35rem); }
   }
   .nav__menu.active { display: flex; }
   .nav__toggle { display: inline-flex; }
+}
+
+@media (max-width: 700px) {
   .section, .hero { padding: var(--space-lg) 0; }
 }
 
