@@ -27,6 +27,10 @@
     .legal ul { list-style: disc; padding-left: 1.5rem; margin-bottom: var(--space-sm); }
     .legal li { margin-bottom: 0.35rem; }
     .legal a { color: var(--color-primary); text-decoration: underline; }
+    /* .legal a ma wyzsza wage niz .btn--primary z arkusza, wiec bez tego wyjatku
+       przycisk dostawal kolor tekstu rowny swojemu tlu — bylo go dokladnie nie widac. */
+    .legal a.btn { color: #fff; text-decoration: none; }
+    .legal a.btn:hover { color: #fff; }
     .legal__updated { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: var(--space-md); }
     .legal__back { display: inline-block; margin-top: var(--space-md); }
   </style>
